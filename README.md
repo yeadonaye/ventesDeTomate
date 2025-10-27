@@ -1,53 +1,65 @@
 # 🍅 S201 Tomates — Java Swing Shop
 
-A playful Java Swing application for browsing delicious tomato varieties, adding them to a cart, and persisting stock changes to JSON. Built with love for tomatoes and clean code.
+Une application Java Swing amusante pour parcourir de délicieuses variétés de tomates, les ajouter à un panier et persister les changements de stock dans un fichier JSON. Construite avec amour pour les tomates et pour un code propre.
 
-## 🌟 Highlights
-- Rich catalog and detail views for tomato varieties
-- Shopping cart with quantity editing and totals
-- Stock-aware UI: clamps quantities, disables actions when out-of-stock
-- JSON persistence: live stock updates saved to `src/main/resources/data/tomatesSauvegarde.json`
-- Fallback loading: prefers sauvegarde file if present, else defaults to `tomates.json`
+## 🌟 Points forts
 
-## 🗂 Table of Contents
-- Overview
-- Highlights
-- Quick Start
-- App Flow
-- Stock Persistence
-- Key Classes
-- Screens & Assets
-- Screenshots
-- Notes & Recommendations
-- Verifying Behavior
-- Fun Tomato Facts
-- Contributing
-- Project Structure
+* Catalogue riche et vues détaillées des variétés
+* Panier avec édition des quantités et totaux
+* Gestion du stock : limitation automatique des quantités et actions désactivées en cas de rupture
+* Persistance JSON : mises à jour en temps réel sauvegardées dans `src/main/resources/data/tomatesSauvegarde.json`
+* Chargement intelligent : préfère le fichier de sauvegarde s'il est présent sinon `tomates.json`
 
-## 🚀 Quick Start
-- Requirements: `Java 1.8` and an IDE (IntelliJ/Eclipse/VS Code) recommended
-- Run from IDE:
-  - Open the project
-  - Launch `ihm.PageGarde#main` to start the app
-- Build with Maven (optional):
-  - `mvn -q -DskipTests=true compile`
-  - Note: If Maven isn’t installed, running from IDE is easiest
+## 🗂 Table des matières
 
-## 🧭 App Flow
-1. Open the catalog and choose a tomato variety
-2. From the detail page, set quantity and click "Ajouter au panier"
-3. Stock decrements immediately and persists to `tomatesSauvegarde.json`
-4. In the cart, adjust quantities; stock syncs and persists on every change
+* Présentation
+* Points forts
+* Démarrage rapide
+* Flux applicatif
+* Persistance du stock
+* Classes principales
+* Écrans et ressources
+* Captures d'écran
+* Notes & recommandations
+* Vérification du comportement
+* Fun facts tomates
+* Contribution
+* Structure du projet
 
-## 🧺 Stock Persistence
-- Save path: `src/main/resources/data/tomatesSauvegarde.json`
-- Default dataset: `src/main/resources/data/tomates.json` (used if save file missing)
-- Helper: `modèle.OutilsBaseDonneesTomates#mettreAJourStockTomateDansJson(String chemin, Tomate tomate)`
-- Behavior:
-  - If `tomatesSauvegarde.json` does not exist, it is initialized from `tomates.json`
-  - The tomato’s `stock` field is updated based on cart actions
+## 🚀 Démarrage rapide
 
-Example JSON entry:
+* Prérequis : `Java 1.8` + IDE recommandé (IntelliJ/Eclipse/VS Code)
+* Exécution depuis l'IDE :
+
+  * Ouvrir le projet
+  * Lancer `ihm.PageGarde#main`
+* Build avec Maven (optionnel) :
+
+  ```bash
+  mvn -q -DskipTests=true compile
+  ```
+
+  *Astuce : si Maven n'est pas installé, exécuter depuis l'IDE est le plus simple*
+
+## 🧭 Flux applicatif
+
+1. Ouvrir le catalogue et choisir une tomate
+2. Depuis la page détail, définir la quantité et cliquer sur « Ajouter au panier »
+3. Le stock se décrémente immédiatement et se sauvegarde dans `tomatesSauvegarde.json`
+4. Dans le panier, modifier les quantités → synchronisation du stock avec sauvegarde instantanée
+
+## 🧺 Persistance du stock
+
+* Fichier de sauvegarde : `src/main/resources/data/tomatesSauvegarde.json`
+* Données par défaut : `src/main/resources/data/tomates.json` (utilisé si aucune sauvegarde)
+* Utilitaire : `modèle.OutilsBaseDonneesTomates#mettreAJourStockTomateDansJson(String chemin, Tomate tomate)`
+* Logique :
+
+  * Si `tomatesSauvegarde.json` n'existe pas → initialisation depuis `tomates.json`
+  * Mise à jour du champ `stock` à chaque action dans le panier
+
+Exemple JSON :
+
 ```json
 [
   {
@@ -59,76 +71,95 @@ Example JSON entry:
 ]
 ```
 
-## 🧩 Key Classes
-- `ihm.PageGarde`: Entry point (main window)
-- `ihm.ListeTomates`: Catalog list; loads from sauvegarde or default JSON
-- `ihm.DetailUnTomate`: Detail view; handles add-to-cart and stock/UI updates
-- `ihm.Panier`: Cart UI with editable quantities and automatic recalculations
-- `service.PanierService`: Cart logic; syncs quantities with stock and persists
-- `service.StockService`: Stock checks and adjustments
-- `modèle.OutilsBaseDonneesTomates`: JSON read/write utilities
+## 🧩 Classes principales
 
-## 🎨 Screens & Assets
-- App icon and images reside under `src/main/resources/`
-- Example icon path: `src/main/resources/images/TOMATESICON.png`
+* `ihm.PageGarde` : fenêtre principale
+* `ihm.ListeTomates` : liste du catalogue (chargement JSON)
+* `ihm.DetailUnTomate` : vue détail + gestion du panier
+* `ihm.Panier` : UI du panier avec quantités éditables
+* `service.PanierService` : logique du panier + persistance
+* `service.StockService` : vérification des stocks
+* `modèle.OutilsBaseDonneesTomates` : gestion JSON
 
-## 📷 Screenshots
+## 🎨 Écrans & ressources
+
+* Images et icônes : `src/main/resources/`
+* Exemple d'icône : `images/TOMATESICON.png`
+
+## 📷 Captures d'écran
 
 ### Intro
-![Intro](ss/intro.png)
 
-### Lists
-![Lists](ss/lists.png)
+*(image : ss/intro.png)*
+
+### Listes
+
+*(image : ss/lists.png)*
 
 ### Description
-![Description](ss/desc.png)
+
+*(image : ss/desc.png)*
 
 ### Panier
-![Panier](ss/panier.png)
+
+*(image : ss/panier.png)*
 
 ### Coordonnées
-![Coordonnées](ss/coor.png)
+
+*(image : ss/coor.png)*
 
 ### Facturation
-![Facturation](ss/fac.png)
+
+*(image : ss/fac.png)*
 
 ### Impression
-![Impression](ss/imrp.png)
+
+*(image : ss/imrp.png)*
 
 ### Progression
-![Progression](ss/progress.png)
 
-## ⚠️ Notes & Recommendations
-- Writing to classpath resources is fine in dev; for production, prefer a writable external path (e.g., `%APPDATA%/S201_TOMATES/tomatesSauvegarde.json`)
-- If you want to reset the app to default stock, delete `tomatesSauvegarde.json` and restart
+*(image : ss/progress.png)*
 
-## 🧪 Verifying Behavior
-- Add items to cart and confirm UI quantity clamps to available stock
-- Reduce quantities in the cart and confirm stock returns to inventory
-- Inspect `src/main/resources/data/tomatesSauvegarde.json` for updated `stock`
-- Restart app; it should load from the sauvegarde file with persisted stock
+## ⚠️ Notes & recommandations
 
-## 🌱 Fun Tomato Facts
-- Tomatoes are botanically fruits, culinarily vegetables — a delicious paradox!
-- The French word for tomato is "tomate"; our app says bonjour to both 🍅 and 👩‍🌾
-- Heirloom varieties come in red, yellow, green, even striped — just like our UI labels
+* Écriture dans les ressources = OK en dev ; en production, utiliser un chemin externe (ex : `%APPDATA%/S201_TOMATES/`)
+* Pour réinitialiser le stock → supprimer `tomatesSauvegarde.json`
 
-## 🤝 Contributing
-- Fork the repo, make your changes, and open a PR
-- Ideas welcome: externalized persistence path, Maven exec plugin, tests
+## 🧪 Vérification du comportement
 
-## 📜 Project Structure
+* Ajout au panier → impossible de dépasser le stock disponible
+* Réduction dans le panier → restitution au stock
+* Vérifier `tomatesSauvegarde.json` après chaque action
+* Redémarrage → le stock doit être conservé
+
+## 🌱 Fun facts tomates
+
+* Fruit botanique, mais légume en cuisine !
+* Variétés multicolores, comme dans notre UI 🍅
+
+## 🤝 Contribution
+
+* Forker → modifier → Pull Request
+
+Idées d'amélioration :
+
+* Chemin de persistance configurable
+* Plugin `maven-exec` pour simplifier l'exécution
+* Tests unitaires
+
+## 📜 Structure du projet
+
 ```
 S201_TOMATES/
 ├── pom.xml
 ├── src/
 │   ├── main/
-│   │   ├── java/   # app source (ihm, service, modèle)
+│   │   ├── java/   # code source
 │   │   └── resources/
 │   │       └── data/
-│   │           ├── tomates.json              # default dataset
-│   │           └── tomatesSauvegarde.json    # persisted stock
+│   │           ├── tomates.json
+│   │           └── tomatesSauvegarde.json
 │   └── test/
 ```
 
-Merci et bon appétit de code! 🍅
+Merci et bon appétit… de code ! 🍅👨‍💻
