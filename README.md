@@ -12,17 +12,18 @@ Une application Java Swing amusante pour parcourir de délicieuses variétés de
 
 ## 🗂 Table des matières
 
-* Présentation
-* Points forts
-* Démarrage rapide
-* Flux applicatif
-* Persistance du stock
-* Classes principales
-* Notes & recommandations
-* Vérification du comportement
-* Fun facts tomates
-* Contribution
-* Structure du projet
+* [Présentation](#-s201-tomates--java-swing-shop)
+* [Points forts](#-points-forts)
+* [Démarrage rapide](#-démarrage-rapide)
+* [Flux applicatif](#-flux-applicatif)
+* [Persistance du stock](#-persistance-du-stock)
+* [Classes principales](#-classes-principales)
+* [Notes & recommandations](#-notes--recommandations)
+* [Vérification du comportement](#-vérification-du-comportement)
+* [Fun facts tomates](#-fun-facts-tomates)
+* [Contribution](#-contribution)
+* [Structure du projet](#-structure-du-projet)
+
 
 ## 🚀 Démarrage rapide
 
