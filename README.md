@@ -18,8 +18,6 @@ Une application Java Swing amusante pour parcourir de délicieuses variétés de
 * Flux applicatif
 * Persistance du stock
 * Classes principales
-* Écrans et ressources
-* Captures d'écran
 * Notes & recommandations
 * Vérification du comportement
 * Fun facts tomates
@@ -80,45 +78,6 @@ Exemple JSON :
 * `service.PanierService` : logique du panier + persistance
 * `service.StockService` : vérification des stocks
 * `modèle.OutilsBaseDonneesTomates` : gestion JSON
-
-## 🎨 Écrans & ressources
-
-* Images et icônes : `src/main/resources/`
-* Exemple d'icône : `images/TOMATESICON.png`
-
-## 📷 Captures d'écran
-
-### Intro
-
-*(image : ss/intro.png)*
-
-### Listes
-
-*(image : ss/lists.png)*
-
-### Description
-
-*(image : ss/desc.png)*
-
-### Panier
-
-*(image : ss/panier.png)*
-
-### Coordonnées
-
-*(image : ss/coor.png)*
-
-### Facturation
-
-*(image : ss/fac.png)*
-
-### Impression
-
-*(image : ss/imrp.png)*
-
-### Progression
-
-*(image : ss/progress.png)*
 
 ## ⚠️ Notes & recommandations
 
